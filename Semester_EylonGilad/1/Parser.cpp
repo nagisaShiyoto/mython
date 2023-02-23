@@ -1,5 +1,6 @@
 #include "Parser.h"
 #include "IndentationException.h"
+#include "../2/SyntaxException.h"
 #include <iostream>
 #include "../2/Boolean.h"
 #include "../2/Integer.h"
@@ -30,7 +31,7 @@ Type* Parser::parseString(std::string str)
 		}
 	}
 
-	return nullptr;
+	throw SyntaxException();
 }
 
 

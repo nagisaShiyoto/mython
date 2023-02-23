@@ -1,6 +1,7 @@
 #include "Type.h"
 #include "InterpreterException.h"
 #include "IndentationException.h"
+#include "../2/SyntaxException.h"
 #include "Parser.h"
 #include <iostream>
 #include "../2/Boolean.h"
@@ -42,6 +43,10 @@ int main(int argc,char **argv)
 		catch (IndentationException what)
 		{
 			std::cout << what.what()<<std::endl;
+		}
+		catch (SyntaxException what)
+		{
+			std::cout << what.what() << std::endl;
 		}
 
 

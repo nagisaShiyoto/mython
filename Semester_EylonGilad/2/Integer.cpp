@@ -13,14 +13,7 @@ bool Integer::isPrintable()
 
 std::string Integer::toString()
 {
-	std::string toSend= "";
-	int value = this->getValue();
-	while (value<0)
-	{
-		toSend += (value % 10)+ ADD_TO_ASCII;
-		value = value / 10;
-	}
-	return toSend;
+	return std::to_string(this->getValue());
 }
 
 int Integer::getValue() const

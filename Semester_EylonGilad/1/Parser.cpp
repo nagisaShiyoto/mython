@@ -15,18 +15,18 @@ Type* Parser::parseString(std::string str)
 	{
 		if (Helper::isBoolean(str))
 		{
-			Boolean var(false, str);
-			return &var;
+			Boolean* var=new Boolean(false, str);
+			return var;
 		}
 		if (Helper::isInteger(str))
 		{
-			Integer var(false, str);
-			return &var;
+			Integer* var=new Integer(false, str);
+			return var;
 		}
 		if (Helper::isString(str))
 		{
-			//String var(false, str);
-			//return &var;
+			String* var=new String(false, str);
+			return var;
 		}
 	}
 

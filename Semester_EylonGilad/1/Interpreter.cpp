@@ -29,32 +29,10 @@ int main(int argc,char **argv)
 			// parsing command
 			Type* var = Parser::parseString(input_string);
 			////////////create a var with right type////////////
-			if (Helper::isBoolean(input_string))
+			if (var->isPrintable())
 			{
-				Boolean* varType=(Boolean*) var;
-				if (varType->isPrintable())
-				{
-					std::cout << varType->toString();
-				}
+				std::cout << var->toString() << std::endl;
 			}
-			if (Helper::isInteger(input_string))
-			{
-				
-				if (((Integer*)var)->isPrintable())
-				{
-					std::cout << ((Integer*)var)->toString();
-				}
-			}
-			if (Helper::isString(input_string))
-			{
-				String* varType = (String*)var;
-				if (varType->isPrintable())
-				{
-					std::cout << varType->toString();
-				}
-			}
-			////////////create a var with right type////////////
-
 			if (var->getIsTemp())
 			{
 				delete var;

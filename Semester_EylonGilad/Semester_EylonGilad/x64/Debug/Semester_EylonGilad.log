@@ -1,4 +1,3 @@
-﻿  Interpreter.cpp
-  Parser.cpp
-  Generating Code...
+﻿  Parser.cpp
+C:\Users\test0\OneDrive\שולחן העבודה\semestertraining\Semester_EylonGilad\1\Parser.cpp(117,27): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
   Semester_EylonGilad.vcxproj -> C:\Users\test0\OneDrive\שולחן העבודה\semestertraining\Semester_EylonGilad\x64\Debug\Semester_EylonGilad.exe

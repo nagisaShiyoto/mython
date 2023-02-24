@@ -144,7 +144,6 @@
     <ClInclude Include="..\1\Helper.h" />
     <ClInclude Include="..\1\IndentationException.h" />
     <ClInclude Include="..\1\InterpreterException.h" />
-    <ClInclude Include="..\1\Parser.h" />
     <ClInclude Include="..\1\Type.h" />
     <ClInclude Include="..\2\Boolean.h" />
     <ClInclude Include="..\2\Integer.h" />

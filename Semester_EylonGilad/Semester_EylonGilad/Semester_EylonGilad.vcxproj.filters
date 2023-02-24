@@ -80,9 +80,6 @@
     <ClInclude Include="..\1\InterpreterException.h">
       <Filter>Header Files\1</Filter>
     </ClInclude>
-    <ClInclude Include="..\1\Parser.h">
-      <Filter>Header Files\1</Filter>
-    </ClInclude>
     <ClInclude Include="..\1\Type.h">
       <Filter>Header Files\1</Filter>
     </ClInclude>

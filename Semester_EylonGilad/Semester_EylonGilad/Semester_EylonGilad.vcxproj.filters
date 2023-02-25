@@ -31,6 +31,12 @@
     <Filter Include="Source Files\3">
       <UniqueIdentifier>{848c8118-eb5c-43c2-a528-cf831173ffc4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\4">
+      <UniqueIdentifier>{87a9d05d-fcf9-42c0-93c3-960b465cbb93}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\4">
+      <UniqueIdentifier>{ec040972-741c-4aa3-b653-a18df715e518}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\1\Helper.cpp">
@@ -68,6 +74,9 @@
     </ClCompile>
     <ClCompile Include="..\3\NameErrorException.cpp">
       <Filter>Source Files\3</Filter>
+    </ClCompile>
+    <ClCompile Include="..\4\List.cpp">
+      <Filter>Source Files\4</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="..\3\Parser.h">
       <Filter>Header Files\3</Filter>
+    </ClInclude>
+    <ClInclude Include="..\4\List.h">
+      <Filter>Header Files\4</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

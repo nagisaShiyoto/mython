@@ -16,7 +16,7 @@ public:
     static Type* getType(std::string str);
     static void cleanTypes();
     static void cleanVar();
-public:
+private:
     static bool copyVar(std::string toCopy, std::string copyFrom);
     static bool isLegalVarName(std::string str);
     static bool makeAssignment(std::string str);

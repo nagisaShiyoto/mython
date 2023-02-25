@@ -7,7 +7,9 @@
 #include "../2/Integer.h"
 #include "../2/String.h"
 #include "../2/Void.h"
+#include "../4/List.h"
 std::unordered_map<std::string, Type*> Parser::_users;
+
 Type* Parser::parseString(std::string str)
 {
 	Type* val = nullptr;
@@ -56,6 +58,11 @@ Type* Parser::getType(std::string str)
 		String* var = new String(true, str);
 		return var;
 	}
+	if (str[0] == '[' && str[str.length()-1] == ']')
+	{
+		List* var = new List(str,true);
+		return var;
+	}
 	return nullptr;
 }
 
@@ -86,6 +93,12 @@ bool Parser::copyVar(std::string toCopy,std::string copyFrom)
 	{
 		throw NameErrorException(copyFrom);
 		return false;
+	}
+	//check if list
+	if (var->toString()[0] == '[')
+	{
+		Parser::_users.insert_or_assign(toCopy, var);
+		return true;
 	}
 	Type* copyVar = Parser::getType(var->toString());
 	copyVar->setIsTemp(var->getIsTemp());

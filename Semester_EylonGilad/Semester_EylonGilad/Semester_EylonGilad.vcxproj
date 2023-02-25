@@ -139,6 +139,7 @@
     <ClCompile Include="..\2\SyntaxException.cpp" />
     <ClCompile Include="..\2\Void.cpp" />
     <ClCompile Include="..\3\NameErrorException.cpp" />
+    <ClCompile Include="..\4\List.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\1\Helper.h" />
@@ -154,6 +155,7 @@
     <ClInclude Include="..\2\Void.h" />
     <ClInclude Include="..\3\NameErrorException.h" />
     <ClInclude Include="..\3\Parser.h" />
+    <ClInclude Include="..\4\List.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

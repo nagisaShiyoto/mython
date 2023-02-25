@@ -140,6 +140,8 @@
     <ClCompile Include="..\2\Void.cpp" />
     <ClCompile Include="..\3\NameErrorException.cpp" />
     <ClCompile Include="..\4\List.cpp" />
+    <ClCompile Include="builtInFanc.cpp" />
+    <ClCompile Include="TypeError.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\1\Helper.h" />
@@ -156,6 +158,8 @@
     <ClInclude Include="..\3\NameErrorException.h" />
     <ClInclude Include="..\3\Parser.h" />
     <ClInclude Include="..\4\List.h" />
+    <ClInclude Include="builtInFanc.h" />
+    <ClInclude Include="TypeError.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

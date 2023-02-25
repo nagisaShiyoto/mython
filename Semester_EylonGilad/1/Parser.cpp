@@ -2,6 +2,8 @@
 #include "IndentationException.h"
 #include "../3/NameErrorException.h"
 #include "../2/SyntaxException.h"
+#include "../Semester_EylonGilad/TypeError.h"
+#include "../Semester_EylonGilad/builtInFanc.h"
 #include <iostream>
 #include "../2/Boolean.h"
 #include "../2/Integer.h"
@@ -9,6 +11,27 @@
 #include "../2/Void.h"
 #include "../4/List.h"
 std::unordered_map<std::string, Type*> Parser::_users;
+
+std::string geType(std::string str)
+{
+	if (Helper::isBoolean(str))
+	{
+		return "bool";
+	}
+	if (Helper::isInteger(str))
+	{
+		return "int";
+	}
+	if (Helper::isString(str))
+	{
+		return "str";
+	}
+	if (str[0] == '[' && str[str.length() - 1] == ']')
+	{
+		return "list";
+	}
+	throw NameErrorException(str);
+}
 
 Type* Parser::parseString(std::string str)
 {
@@ -20,6 +43,83 @@ Type* Parser::parseString(std::string str)
 	Helper::rtrim(str);
 	if (str.length() > 0)
 	{
+		std::string command = str.substr(0, str.find("("));
+		////////////////////////////////////type//////////////////////////////////
+		if (command == "type")
+		{
+			if (str.find("(") == -1)
+				//check if syntx wrong
+			{
+				throw builtInFanc("type");
+			}
+			std::string val = str.substr(str.find("(") + 1);
+			val = val.substr(0, val.length() - 1);
+			auto it = Parser::_users.find(val);
+			try
+			{
+				Type* midVal=Parser::parseString(val);
+				val = midVal->toString();
+			}
+			catch (...)
+			{
+
+			}
+			std::string toReturn= "\"<type '" + geType(val) + "'>\"" ;
+			String* var = new String(true, toReturn);
+			return var;
+
+		}
+		////////////////////////////////////type//////////////////////////////////
+		////////////////////////////////////type//////////////////////////////////
+		else if (command == "len")
+		{
+			if (str.find("(") == -1)
+			{
+				throw builtInFanc("len");
+			}
+			Type* midVal = nullptr;
+			std::string val = str.substr(str.find("(") + 1);
+			val = val.substr(0, val.length() - 1);
+			try
+			{
+				midVal = Parser::parseString(val);
+				val = midVal->toString();
+			}
+			catch (...)
+			{
+
+			}
+			std::string type = geType(val);
+			if (type == "str" )
+			{
+				Integer* var = new Integer(true, std::to_string(val.size() - 2));
+				return var;
+			}
+			else if (type == "list")
+			{
+				Integer* var = new Integer(true, std::to_string(val.size() / 3));
+				return var;
+			}
+			else
+			{
+				throw TypeError(type);
+			}
+
+		}
+		////////////////////////////////////type//////////////////////////////////
+		///////////////////////////////////del////////////////////////////////////
+		else
+		{
+			std::string command = str.substr(0, str.find(" "));
+			if (command == "del")
+			{
+				std::string val = str.substr(str.find(" ") + 1);
+				Parser::_users.erase(val);
+				Void* var = new Void(true);
+				return var;
+			}
+			///////////////////////////////////del////////////////////////////////////
+		}
 		Helper::rtrim(str);
 		val = Parser::getType(str);
 		if ( val!= nullptr)
@@ -37,7 +137,6 @@ Type* Parser::parseString(std::string str)
 			return var;
 		}
 	}
-
 	throw SyntaxException();
 }
 

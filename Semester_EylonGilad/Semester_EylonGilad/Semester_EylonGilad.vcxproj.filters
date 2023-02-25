@@ -37,6 +37,12 @@
     <Filter Include="Source Files\4">
       <UniqueIdentifier>{ec040972-741c-4aa3-b653-a18df715e518}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\5">
+      <UniqueIdentifier>{2405576e-33a1-4d4f-a0f6-d773b10f1b20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\5">
+      <UniqueIdentifier>{44cb20ac-7716-4090-b648-f57162076745}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\1\Helper.cpp">
@@ -77,6 +83,12 @@
     </ClCompile>
     <ClCompile Include="..\4\List.cpp">
       <Filter>Source Files\4</Filter>
+    </ClCompile>
+    <ClCompile Include="TypeError.cpp">
+      <Filter>Source Files\5</Filter>
+    </ClCompile>
+    <ClCompile Include="builtInFanc.cpp">
+      <Filter>Source Files\5</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -121,6 +133,12 @@
     </ClInclude>
     <ClInclude Include="..\4\List.h">
       <Filter>Header Files\4</Filter>
+    </ClInclude>
+    <ClInclude Include="TypeError.h">
+      <Filter>Header Files\5</Filter>
+    </ClInclude>
+    <ClInclude Include="builtInFanc.h">
+      <Filter>Header Files\5</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

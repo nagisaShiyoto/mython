@@ -9,7 +9,8 @@
 #include "../2/Integer.h"
 #include "../2/String.h"
 #include "../4/List.h"
-
+#include "../Semester_EylonGilad/TypeError.h"
+#include "../Semester_EylonGilad/builtInFanc.h"
 #define WELCOME "Welcome to Magshimim Python Interperter version 1.0 by "
 #define YOUR_NAME "Eylon Gilad"
 
@@ -27,7 +28,6 @@ int main(int argc,char **argv)
 	{
 		try
 		{
-			// parsing command
 			Type* var = Parser::parseString(input_string);
 			////////////create a var with right type////////////
 			if (var->isPrintable())
@@ -39,7 +39,6 @@ int main(int argc,char **argv)
 				delete var;
 			}
 			Parser::cleanTypes();
-			
 		}
 		catch (IndentationException what)
 		{
@@ -53,7 +52,14 @@ int main(int argc,char **argv)
 		{
 			const char* msg = what.what();
 		}
-
+		catch (builtInFanc what)
+		{
+			const char* msg = what.what();
+		}
+		catch (TypeError what)
+		{
+			const char* msg = what.what();
+		}
 
 		// get new command from user
 		std::cout << ">>> ";
